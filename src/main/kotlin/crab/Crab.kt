@@ -46,19 +46,17 @@ class Crab {
         return fuel
     }
 
-    private fun gauss(num: Int): Int {
-        return num * ((num+1)/2)
+    private fun gauss(num: Int): Double {
+        return num.toDouble() * ((num.toDouble()+1)/2) * 1.0
     }
 
-    private fun getNonLinealFuel(value: Int): Int {
-        var fuel = 0
+    private fun getNonLinealFuel(value: Int): Double {
+        var fuel = 0.0
 
         crabs.forEach {
-            println("gaus($value, $it) = ${gauss(abs(value-it))}")
+//            println("gaus($value, $it) = ${gauss(abs(value-it))}")
             fuel += gauss(abs(value - it))
         }
-
-        println(gauss(11))
 
         return fuel
     }
@@ -70,7 +68,7 @@ class Crab {
     fun computeNonLinealFuel(): Int {
         return min(
             getNonLinealFuel(floor(computeMean()).toInt()),
-            getNonLinealFuel(ceil(computeMean()).toInt()),
-        )
+            getNonLinealFuel(ceil(computeMean()).toInt())
+        ).toInt()
     }
 }
