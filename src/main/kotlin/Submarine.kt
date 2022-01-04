@@ -1,5 +1,6 @@
 import bingo.Bingo
 import crab.Crab
+import day8.Day8
 import evolution.FishPopulation
 import healthdiagnosis.Diagnosis
 import map.HydrothermalMap
@@ -7,13 +8,14 @@ import movement.Movement
 import rangefinder.RangeFinder
 
 fun main() {
-    val fileUtils: RangeFinder = RangeFinder()
-    val movement: Movement = Movement()
-    val diagnosis: Diagnosis = Diagnosis()
-    val bingo: Bingo = Bingo()
+    val fileUtils = RangeFinder()
+    val movement = Movement()
+    val diagnosis = Diagnosis()
+    val bingo = Bingo()
     val map = HydrothermalMap()
     val lanternFishPopulation = FishPopulation()
     val crab = Crab()
+    val digits = Day8()
 
     println("AOC2021")
     // DAY 1
@@ -39,5 +41,9 @@ fun main() {
     crab.readProblem("crabs")
     println("DAY 7 (1/2): fuel needed when only horizontal moves performed is ${crab.computeLinealFuel()}.")
     println("DAY 7 (1/2): fuel needed when only horizontal moves performed is ${crab.computeNonLinealFuel()}.")
+    // DAY 8
+//    digits.readProblem("digitsdataset")
+    println("DAY 8 (1/2): the number of unique digits (1, 4, 7 and 8) are ${digits.countUniqueNumbers("digitsdataset")}.")
+//    println("DAY 7 (1/2): fuel needed when only horizontal moves performed is ${crab.computeNonLinealFuel()}.")
 
 }
